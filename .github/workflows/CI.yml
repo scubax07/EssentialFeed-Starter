@@ -4,8 +4,7 @@ name: CI
 # Controls when the action will run. 
 # Triggers the workflow on push and pull request events but only for the master branch.
 on:
-  push:
-    branches: [ master ]
+
   pull_request:
     branches: [ master ]
 
@@ -21,10 +20,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Select Xcode
-      run: sudo xcode-select -switch /Applications/Xcode_16.app
+      run: sudo xcode-select -switch /Applications/Xcode_16.0.app
       
     - name: Xcode version
       run: /usr/bin/xcodebuild -version
